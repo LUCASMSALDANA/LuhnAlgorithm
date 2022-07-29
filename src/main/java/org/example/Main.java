@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        String tarjeta ="4008558500573099";
+        String tarjeta ="325863340557399";
         boolean numeroCorrecto= verificarTarjeta(tarjeta);
 
         if(numeroCorrecto){
@@ -31,12 +31,13 @@ public class Main {
 
             if(num>=10){            //Este if solo puede ingresar cuando el num es mayor a 10, es decir solo si se hizo la multiplicacion y el resultado tiene 2 digitos
                 sumaDigitos+=num%10;
-                num+=1;
+                sumaDigitos+=1;
+            }else {
+                sumaDigitos += num;  // sumo los numeros
             }
-            sumaDigitos+=num;  // sumo los numeros
             multiplicar= !multiplicar; // cambio de valor mi variable booleana
         }
-
+        System.out.println(sumaDigitos%10);
         return (sumaDigitos%10 ==0); // devuelve verdadero, solo si el el resto me da 0, cumpliendo con el algoritmo de lhun
     }
 }
